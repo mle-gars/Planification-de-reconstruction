@@ -12,6 +12,6 @@ class House :
     def __lt__(self, other_building):
         return self.get_building_difficulty()  < other_building.get_building_difficulty()
 
-        
+
     
 ''' métrique par difficultés : somme des difficultés permettant de raccorder le House)'''
