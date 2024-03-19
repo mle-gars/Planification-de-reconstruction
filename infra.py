@@ -1,25 +1,17 @@
+class Infra:
+	
+	def __init__(self, infra_id, length, infra_type, nb_houses):
+		self.infra_id = infra_id
+		self.length = length
+		self.infra_type = infra_type
+		self.nb_houses = nb_houses
 
-class Infra :
+	def repair_infra(self):
+		self.infra_type = "infra_intacte"
 
-    def __init__(self, infra_id, infra_type, length, nb_houses):
-        self.infra_id = infra_id
-        self.infra_type = infra_type
-        self.length = length
-        self.nb_houses = nb_houses
-
-    def repair_infra(self):
-        self.infra_type = "infra_intacte"
-        
-    def get_infra_difficulty (self):
-        return 0 if self.infra_type == "infra_intacte" else self.length / self.nb_houses
-        # if self.infra_type == "infra_intacte":
-        #     return 0
-        # else:
-        #     return self.length / self.nb_houses
-        
-    def __radd__(self, other_object):
-        return self.get_infra_difficulty + other_object
+	def get_infra_difficulty(self):
+		return 0 if self.infra_type == "infra_intacte" else self.length / self.nb_houses
 
 
-''' métrique par difficultés : infra intacte = diff NULL, infra damaged = diff FULL 
-nécessaire '''
+	def __radd__(self, other_object):
+		return self.get_infra_difficulty() + other_object

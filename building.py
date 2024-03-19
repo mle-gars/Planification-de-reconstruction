@@ -1,4 +1,4 @@
-class House :
+class Building :
 
     def __init__(self, id_building, list_infra): # Constructor
         self.id_building = id_building
@@ -11,6 +11,9 @@ class House :
         
     def __lt__(self, other_building):
         return self.get_building_difficulty()  < other_building.get_building_difficulty()
+    
+    def __repr__(self):
+        return self.id_building
 
 
     
